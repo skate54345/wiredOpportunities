@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Opportunity Filter" icon-name="standard:opportunity">
+        <div class="slds-m-around_medium">
+            <div class="buttons">
+                <p class="slds-text-heading_medium">Select an Opportunity Stage</p>   
+            </div>
+            <br>
+            <div class="buttons">
+                <lightning-button label="Prospecting" onclick={handleProspecting}></lightning-button>
+                <lightning-button label="Qualification" onclick={handleQualification}></lightning-button>
+                <lightning-button label="Needs Analysis" onclick={handleNeedsAnalysis}></lightning-button>
+                <lightning-button label="Value Proposition" onclick={handleValueProp}></lightning-button>
+                <lightning-button label="Id. Decision Makers" onclick={handleIdDecisionMakers}></lightning-button>
+                <lightning-button label="Perception Analysis" onclick={handlePerceptionAnalysis}></lightning-button>
+                <lightning-button label="Proposal/Price Quote" onclick={handleProposalPriceQuote}></lightning-button>
+                <lightning-button label="Negotiation" onclick={handleNegotiationReview}></lightning-button>
+                <lightning-button label="Closed/Won" onclick={handleClosedWon}></lightning-button>
+                <lightning-button label="Closed/Lost" onclick={handleClosedLost}></lightning-button>
+                <lightning-button label="All" onclick={handleAll}></lightning-button>
+            </div>
+            <br>
+            <div style="height: 350px">
+                <lightning-datatable key-field="Id" data={opportunities.data} columns={columns}>
+                </lightning-datatable>
+            </div>
+
+            <template if:true={error}>
+                <h1>Error: {error}</h1>>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
